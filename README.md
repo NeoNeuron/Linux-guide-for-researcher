@@ -225,7 +225,7 @@ Assume Bill is going to work on our computing server(bill@zcpu), and your local 
 ###Login
 
 ```bash
-$ ssh -p 68 bill@202.121.1.119
+$ ssh -p 22 bill@202.121.1.1
 ```
 
 Bill wants to run a test C program. So he opens a text editor
@@ -261,7 +261,7 @@ OK, works.
 Now Bill wants to upload his own files to the server.
 
 ```shell
-$ scp -v -P xx /home/bill/work bill@xxx.xxx.xxx.xxx:/home/bill/
+$ scp -v -P xx /home/bill/work bill@202.121.1.1:/home/bill/
 ```
 
 Now Bill finds that constantly typing the address and port is anoiying. So let's alias it
@@ -272,8 +272,8 @@ $ nano ~/.ssh/config
 add following lines into ssh config file
 ```vim
 Host zcpu
-	HostName xxx.xxx.xxx.xxx
-	Port xx
+	HostName 202.121.1.1
+	Port 22
 	User bill
 ```
 
