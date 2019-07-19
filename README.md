@@ -16,7 +16,7 @@ Backgrounds and Concepts
 Unix
 ----
 Unix is an operating system that originally developmented at the Bell Labs, by Ken Thompson, Dennis Ritchie, and others in 1970s. Ken Thompson invented the B programming language, the direct predecessor to the C programming language, Dennis Ritchie created the C programming language.
-Unix's genius design and continuing improvements make it popular and long lasting till today. What's more important, had significant impact on other operating systems (including Mac and Windows).
+Unix's genius design and continuing improvements make it popular and long lasting till today. What's more, other modern operating systems (including Mac and Windows) is significantly influenced by Unix's design and spirit also.
 
 Long Live Unix!
 
@@ -25,7 +25,8 @@ Long Live Unix!
 
 Linux
 -----
-Linux is a spiritual successor to the original Unix system. Both of them (and also macOS) are mostly POSIX-compliant [2]. POSIX [1] is a standard that maintain software compatibility between variants of Unix and other operating systems. For example, C source code should be (almost) interchange between (almost) POSIX-compliant systems.
+Linux is a spiritual successor to the original Unix system. Both of them (and also macOS) are mostly POSIX-compliant [2]. POSIX [1] is a standard that maintain software compatibility between variants of Unix and other operating systems. For example, C source code should be (almost) interchangeable between (almost) POSIX-compliant systems.
+
 When we say the system is Unix-like, we usually mean the system is mostly POSIX-compliant.
 
 POSIX standard covers general concepts, system interfaces, shell & utilities etc. It is unlikely that you will need to read it as a beginner or even as an experienced user.
@@ -34,13 +35,13 @@ POSIX standard covers general concepts, system interfaces, shell & utilities etc
 * [2] [POSIX, Wikipedia](https://en.wikipedia.org/wiki/POSIX)
 
 
-GNU and Free Software
----------------------
+GNU and Free Software (自由软件)
+-------------------------------
 GNU means GNU's Not Unix. ;-)
 
-It is the name of a software project lead by Richard Stallman (RMS). The GNU project aims to create a free operating system and a free software toolchain on top of it, by collaboratively developers.
+It is the name of a software project lead by Richard Stallman (RMS). The GNU project aims to create a free operating system and a free software toolchain on top of it, by collaborative developers.
 
-Free here means: the users are free to run the software, share it (copy and distribute), study it, and modify it.
+The *Free* means: the users are free to *run* the software, *share* it (copy and distribute), study it, and *modify* it.
 
 In order to (legally) guarantee these freedom, a licence is necessary: The GNU General Public License (GNU GPL or GPL), which is a "copyleft" licence, in contrast to "copyright". In simple words, it means that you must publish your source code and licence it under GPL, if it is a derivative work from a GPL licenced code and you are distributing or selling it (with or without charge). See [2,3] for details.
 
@@ -76,13 +77,13 @@ In most cases, you will use a "Linux distributions" instead of assembling a Linu
 Some Linux distributions focus on out-of-the-box (Ubuntu), some focus on bleeding edge software (Arch, Fedora), some focus on stability (Debian, CentOS).
 
 
-Software Repository
--------------------
+Software Repository (软件仓库/软件源)
+------------------------------------
 Also called software source.
 
-Software repository is a website that stores and publishes a collection of free softwares that specifically tuned for the distribution. The repository is maintained by developers of the distribution and possibly the original author of the individual software. The softwares in the repository could come from everywhere, e.g. GNU projects, amateur projects, academic projects, commercial projects.
+Software repository is a website that stores and publishes a collection of free softwares that specifically tuned for the distribution. The repository is maintained by developers of the distribution and possibly the original author of the individual software. The softwares in the repository could come from everywhere, e.g. GNU projects, amateur projects, academic projects, and commercial projects.
 
-The software repository could also contain non-free softwares, non-free in the sense that they are not GPL or LGPL compatible. e.g. mp3 decoding and encoding technology (patented, but expired 2017), nvidia-driver (not open source).
+The software repository could also contain non-free softwares, non-free in the sense that they are not GPL or LGPL compatible. e.g. mp3 decoding and encoding technology (patented, but expired 2017, now totally free), nvidia-driver (not open source).
 
 
 Why Choose Linux
@@ -94,7 +95,7 @@ Why Choose Linux
 
 * Let *you* control your computer
 
-  No unawared background programs running e.g. automatic software updata, force system reboot, virus scan, unexplained internet traffic or CPU usage etc.
+  No unwanted background programs running e.g. automatic software updata, force system reboot, virus scan, unexplained internet traffic or CPU usage etc.
   
   No hiding/joking of CPU usage, network traffic, RAM usage etc.
   
@@ -102,7 +103,7 @@ Why Choose Linux
 
 * Run faster
 
-  Linux has a better CPU scheduler and RAM memory management compared to Windows in general. Thus programs could run a few percent (sometimes more than 10 percent) faster after transplant to Linux. e.g. it is observed that Linux version of Mathematica is faster than its Windows version, likely Matlab behaves the same.
+  Linux has a better CPU scheduler and RAM memory management compared to Windows in general. Thus programs could run a few percent (sometimes more than 10 percent) faster after transplant to Linux. e.g., it is observed that Linux version of Mathematica is faster than its Windows version, likely Matlab behaves the same.
 
 * Rich set of tools for advanced user
     - For administration of system
@@ -149,13 +150,13 @@ To really learn Linux, you should force yourself to use it for all your works. S
 
 They all come with good documentations. Just follow the documentation to start your journey.
 
-Linux might not have the exactly same software as in Windows or Mac, but there are softwares to achieve the same purpose.
+Linux may not have the exact software you might expect in Windows or Mac, but there are softwares to achieve the same purpose.
 
 Record useful commands/softwares in your personal notebook.
 
-  There are few tasks that are impossible or too costly to be done under Linux. You might need a virtual machine or Wine [1].
+  To the author's experience, there are few tasks that are impossible or too costly to be done under Linux. You might need a virtual machine or Wine [1] to accomplish these task.
 
-    1. Login bank of China.
+    1. Bank of China, login web interface.
     2. QQ, wechat. (alternatives: use web based wechat, http://wx.qq.com/)
     3. Games. (alternatives: Use Wine, or dual boot with a real Windows)
 
@@ -166,13 +167,15 @@ Where to Get Help
 =================
 
 > RTFM (Read The Fucking Manual)
->               ---- a word you might heard when asking for help.
+>               ---- said folk
 
 * Search in Google, with keywords and name of your Linux distributions
 
 * Most commands come with a manual
 
   You can open a command window and type `man` _commandname_ to access its documentation. Or type `man man` to get help of `man` itself.
+
+* Ask who knows linux
 
 
 File System Organization
@@ -193,7 +196,7 @@ Relative path starts by ".". e.g.
 
 "~" is short for your home directory "/home/${USER}", "${USER}" is your user name.
 
-Unlike Windows, Linux directories are arranged by their category (e.g. program, setting, library or document), not by software name or company name.
+Linux directories are arranged by their category (e.g. program, setting, library or document), not by software name or company name (like in Windows).
 
 	/home       user data all go here
 	/boot       linux kernal and configurations about booting.
