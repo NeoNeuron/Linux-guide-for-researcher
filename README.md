@@ -9,6 +9,10 @@
 >		Write programs to handle text streams, because that is a universal interface.
 >                                             ---- Unix philosophy (Peter H. Salus)
 
+### Other Links
+- Install V2Ray client: 
+	- [Windows User](https://github.com/NeoNeuron/Linux-guide-for-researcher/blob/master/v2ray/v2ray-client-101.md#for-windows-user)
+	- [macOS User](https://github.com/NeoNeuron/Linux-guide-for-researcher/blob/master/v2ray/v2ray-client-101.md#for-macos-user)
 
 Backgrounds and Concepts
 ========================
@@ -906,6 +910,30 @@ You may wish to check the `.bashrc` file in your home directory for lines such a
 export PATH="/home/bill/anaconda/bin:$PATH"
 ```
 > Note: Replace `/home/bill/anaconda/` with your actual path.
+
+### Conda commands for package management
+
+```shell
+conda list						# List installed packages
+conda install package # Install package in current environment
+conda update package	# Update package in current environment
+conda remove package	# Delete package in current environment
+
+conda list -n  your_env						# List installed packages in your_env environment
+conda install -n your_env package	# Install package in your_env environment
+conda update -n your_env package	# Update package in your_env environment
+conda remove -n  your_env package	# Delete package in your_env environment
+```
+
+### Conda commands for environment management
+
+```shell
+conda env list												# List existing environments
+conda create -n your_env python=x.x		# Create an environment with python version x.x, named as your_env
+conda activate your_env								# Activate your_env
+conda deactivate											# Exit your_env 
+conda remove -n your_env -- all				# Delete your_env
+```
 
 MATLAB Tutorial on HPC-Server
 =============================
