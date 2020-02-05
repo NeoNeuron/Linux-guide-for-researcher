@@ -867,17 +867,17 @@ apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxc
 For x86 systems,
 1. Using `wget` to download the [Anaconda install for Linux](https://www.anaconda.com/distribution/#linux).
 ```shell
-wget -c https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh -O ~/Anaconda3-2019.07-Linux-x86_64.sh
+wget -c https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh -O ~/Anaconda3-2019.10-Linux-x86_64.sh
 ```
-> Note: `Anaconda3-2019.07-Linux-x86_64.sh` is used here as an example. You might find the latest verion or other historical verion frome the Link above.
+> Note: `Anaconda3-2019.10-Linux-x86_64.sh` is used here as an example. You might find the latest verion or other historical verion frome the Link above.
 
 2. (Optional, but recommended) [Verify data integrity with SHA-256](https://docs.anaconda.com/anaconda/install/hashes/)
 ```shell
-sha256sum ~/anaconda3-2019.07-Linux-x86_64.sh
+sha256sum ~/Anaconda3-2019.10-Linux-x86_64.sh
 ```
 3. Run the silent installation of Anaconda for Linux
 ```shell
-bash ~/Anaconda3-2019.07-Linux-x86_64.sh -b -p $HOME/anaconda
+bash ~/Anaconda3-2019.10-Linux-x86_64.sh -b -p $HOME/anaconda
 ```
 The installer will not prompt you for anything, including setup of your shell to activate conda. To add this activation in your current shell session:
 ```shell
