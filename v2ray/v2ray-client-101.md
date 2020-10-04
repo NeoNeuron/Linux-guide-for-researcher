@@ -1,8 +1,8 @@
 # For Windows User
 *(Refer from https://www.4spaces.org/digitalocean-build-v2ray-0-1/)*
 ## Download
-1. Download [v2ray-windows-64.zip Github Release](https://github.com/v2ray/v2ray-core/releases)
-2. Download [v2rayN-v2rayN.exe-Github Release](https://github.com/2dust/v2rayN/releases)
+1. Download [v2ray-windows-64.zip Github Release](https://github.com/v2ray/v2ray-core/releases/tag/v4.20.0)
+2. Download [v2rayN-v2rayN.exe-Github Release](https://github.com/2dust/v2rayN/releases/tag/3.1)
 3. Unzip `v2ray-windows-64.zip`, and then copy `V2RayN.exe` into the output folder of `v2ray-windows-64`, i.e., `V2RayN.exe` and contents of `v2ray-windows-64.zip` are in the same folder.
 ![dir](vmess-windows-client-dir.jpg)
 

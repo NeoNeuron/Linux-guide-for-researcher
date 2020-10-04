@@ -7,7 +7,7 @@
 >		Write programs that do one thing and do it well.
 >		Write programs to work together.
 >		Write programs to handle text streams, because that is a universal interface.
->                                             ---- Unix philosophy (Peter H. Salus)
+>    	                                     ---- Unix philosophy (Peter H. Salus)
 
 ### Other Links
 - Install V2Ray client: 
@@ -419,7 +419,7 @@ $ top
 	%Cpu(s): 25.6 us,  6.8 sy,  0.0 ni, 67.6 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
 	KiB Mem : 26358241+total,  1502220 free, 18863252+used, 73447664 buff/cache
 	KiB Swap:        0 total,        0 free,        0 used. 73098776 avail Mem
-
+	
 	  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
 	19899 mike      20   0 9640456 1.072g 248604 S  2002  0.4 186:07.75 MATLAB
 	19272 john      20   0  0.171t 0.171t   3340 R  99.7 69.6  72:10.56 t3
@@ -857,7 +857,7 @@ pip <command> --help
 Getting Started with Anaconda
 =============================
 
-Anaconda is a highly integrated Python package manager and environment manager.
+Anaconda is a highly integrated Python package manager and environment manager. Get [Conda Cheat Sheet](https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf) Here.
 
 ### Prerequisites (already satisfied)
 ```shell
