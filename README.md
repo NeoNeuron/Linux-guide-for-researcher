@@ -14,6 +14,19 @@
 	- [Windows User](https://github.com/NeoNeuron/Linux-guide-for-researcher/blob/master/v2ray/v2ray-client-101.md#for-windows-user)
 	- [macOS User](https://github.com/NeoNeuron/Linux-guide-for-researcher/blob/master/v2ray/v2ray-client-101.md#for-macos-user)
 
+# Table of Contents
+
+- **[Backgrounds and Concepts](#backgrounds-and-concepts)**
+- **[Why Choose Linux](#why-choose-linux)**
+- **[Where to Start and How to Learn Linux](#where-to-start-and-how-to-learn-linux)**
+- **[Where to Get Help](#where-to-get-help)**
+- **[File System Organization](#file-system-organization)**
+- **[One Day in Linux(Get Started)](#one-day-in-linux)**
+- **[Programming Tips](#programming-tips)**
+- **[Python Tutorial on HPC-Server](#python-tutorial-on-hpc-server)**
+- **[Get Started with Anaconda](#get-started-with-anaconda)**
+- **[Recommended Softwares](#recommended-softwares)**
+
 Backgrounds and Concepts
 ========================
 
@@ -854,7 +867,7 @@ pip uninstall SomePackage
 pip <command> --help
 ```
 
-Getting Started with Anaconda
+Get Started with Anaconda
 =============================
 
 Anaconda is a highly integrated Python package manager and environment manager. Get [Conda Cheat Sheet](https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf) Here.
