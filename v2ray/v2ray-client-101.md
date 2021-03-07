@@ -34,7 +34,7 @@
 ## Install [V2rayU](https://github.com/yanue/V2rayU)
 Install with homebrew command
 ```shell
-brew cask install v2rayu
+brew install --cask v2rayu
 ```
 ## Run V2rayU from the Launchpad.
 

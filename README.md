@@ -795,18 +795,18 @@ class Counter(dict):
 		...
 ```
 - If you are looking for an object, the use of wildcards `*` in conjunction with question mark will allow you to search current namespace for object with matching names:
-```python
-In [1]: *int*?
-FloatingPointError
-int
-print
-```
+	```python
+	In [1]: *int*?
+	FloatingPointError
+	int
+	print
+	```
 2. Shell Assignment
 When doing interactive computing it is common to need to access the underlying shell. This is doable through the use of the exclamation mark `!` (or bang). For instance,
-```shell
-In[1]: !pwd
-/User/home/
-```
+	```shell
+	In[1]: !pwd
+	/User/home/
+	```
 
 ### Create an isolated Python environment
 > Refer from (https://virtualenv.pypa.io/en/latest/userguide/)
@@ -879,33 +879,50 @@ apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxc
 ### Installation
 For x86 systems,
 1. Using `wget` to download the [Anaconda install for Linux](https://www.anaconda.com/distribution/#linux).
-```shell
-wget -c https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh -O ~/Anaconda3-2019.10-Linux-x86_64.sh
-```
-> Note: `Anaconda3-2019.10-Linux-x86_64.sh` is used here as an example. You might find the latest verion or other historical verion frome the Link above.
+	```shell
+	wget -c https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh -O ~/Anaconda3-2019.10-Linux-x86_64.sh
+	```
+	> Note: `Anaconda3-2019.10-Linux-x86_64.sh` is used here as an example. You might find the latest verion or other historical verion frome the Link above.
 
-2. (Optional, but recommended) [Verify data integrity with SHA-256](https://docs.anaconda.com/anaconda/install/hashes/)
+2. (Optional, but recommended) Verify data integrity with SHA-256. Check your own hashes with official released ones [here](https://docs.anaconda.com/anaconda/install/hashes/).
+	```shell
+	sha256sum ~/Anaconda3-2019.10-Linux-x86_64.sh
+	```
+3. Run the silent installation of Anaconda for Linux.
+	```shell
+	bash ~/Anaconda3-2019.10-Linux-x86_64.sh -b -p $HOME/anaconda
+	```
+	The installer will not prompt you for anything, including setup of your shell to activate conda. To add this activation in your current shell session:
+	```shell
+	eval "$($HOME/anaconda/bin/conda shell.bash hook)"
+	```
+	With this activated shell, you can then install conda's shell functions for easier access in the future:
+	```shell
+	# initiate conda
+	conda init
+	```
+	If you prefer that conda’s base environment not be activated on startup of shell, set the `auto_activate_base` parameter to `false`:
+	```shell
+	conda config --set auto_activate_base false
+	```
+
+### One more thing: Create your own Python environment
+
 ```shell
-sha256sum ~/Anaconda3-2019.10-Linux-x86_64.sh
-```
-3. Run the silent installation of Anaconda for Linux
-```shell
-bash ~/Anaconda3-2019.10-Linux-x86_64.sh -b -p $HOME/anaconda
-```
-The installer will not prompt you for anything, including setup of your shell to activate conda. To add this activation in your current shell session:
-```shell
-eval "$($HOME/anaconda/bin/conda shell.bash hook)"
-```
-With this activated shell, you can then install conda's shell functions for easier access in the future:
-```shell
-conda init
-```
-If you prefer that conda’s base environment not be activated on startup of shell, set the `auto_activate_base` parameter to `false`:
-```shell
-conda config --set auto_activate_base false
+# create a new conda environment named as tf-env，with python version 3.7
+conda create -n tf-env python=3.7
+# activate tf-env
+source activate tf-env
+# install 必要python库
+conda install numpy scipy matplotlib
+# 安装tensorflow-gpu 2(默认版本)
+pip install tensorflow-gpu
+# 若想安装tensorflow-gpu 1.15，请勿同时安装两个版本，容易出错。
+pip install tensorflow-gpu==1.15
 ```
 
 ### Activate and Deactivate
+
 Use `conda` command for activating and deactivating anaconda environment.
 ```shell
 conda activate		# activate
@@ -947,6 +964,45 @@ conda activate your_env								# Activate your_env
 conda deactivate											# Exit your_env 
 conda remove -n your_env -- all				# Delete your_env
 ```
+
+Access Jupyter Notebook
+===
+
+**Reference:** [Slurm远程登录Jupyter Notebook](https://www.cnblogs.com/cookielbsc/p/12411560.html), [分享脚本远程登陆 Jupyter Notebook](https://zhuanlan.zhihu.com/p/65130699)
+
+As those on your own laptop, you can run `jupyter notebook` on any high performance computing server. The only difference might be the lack of desktop environment so that you may have trouble accessing jupyter notebook through termianl window. Thanks to the power SSH potocol, we can run `jupyter` in no-brower mode, and redirect the remote port to your local port. Then, we can access remote `jupter` notebooks with your local browser.
+
+1. Run `jupyter notebook` on computing server.
+
+   ````bash
+   # Run jupyter notebook in no-browser mode;
+   # Specify port 8880(if occupied, try other idle ones);
+   jupyter notebook --no-browser --port=8880
+   ````
+
+2. In your local laptop, open a new terminal and run: 
+
+   ```bash
+   # -N: Do not execute a remote command.  This is useful for just forwarding ports.
+   # -L: Specifies that connections to the given TCP port or Unix socket
+   #     on the local (client) host are to be forwarded to the given host
+   #     and port, or Unix socket, on the remote side.
+   #     First localhost:8880 is for your local port，and the second localhost:8880 
+   #     is for the remote ones. 
+   # Replace your_name with your own username on the computing server 
+   #     with IP address=cluster_url
+   ssh -N -L localhost:8880:localhost:8880 your_name@cluster_url
+   ```
+
+3. Open the browser on your own laptop, access Jupyter notebook with the url below:
+
+   ```bash
+   # Replace the token with the one appears in the log for jupyter command 
+   #   on your computing server
+   "http://127.0.0.1:8880/?token=260544c76ee3eeca*****************d8523886dde4656"
+   ```
+
+> See also: [Remote accessing Jupyter Notebook with SLURM](https://github.com/NeoNeuron/simple-hpc-guide#slurm远程登录jupyter-notebook)
 
 MATLAB Tutorial on HPC-Server
 =============================
